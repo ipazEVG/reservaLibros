@@ -1,0 +1,341 @@
+/* Estilos del proyecto Gestion de libros */
+
+/* ------------- colores ------------- */
+:root {
+    /* Define colores personalizados que se pueden reutilizar en el CSS */
+    --color-primario: #0693e3;
+    --color-secundario: #e6f2ff;
+    --color-terciario: #006293;
+    --color-alternativo: #c8e3ff;
+}
+
+/* ------------- Reseteo de estilos básicos ------------- */
+* {
+    /* Elimina márgenes y el relleno por defecto de todos los elementos */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Hace que el ancho y alto incluyan el borde y el relleno (mejor manejo de layout) */
+    font-family: Arial, Helvetica, sans-serif; /*Fuente general*/
+}
+/* Cuerpo del documento */
+body {
+    
+    align-items: center; /*Centra los elementos del cuerpo*/
+    background-color:#f5f8f9; /*color de fondo*/
+}
+
+
+/* ------------- header ------------- */
+
+header {
+    background-color: var(--color-terciario); /* Usa el color terciario para el fondo del encabezado */
+    padding: 1vh 2vw; /* Añade relleno vertical y horizontal */
+    display: flow-root; /* Asegura que los elementos floten correctamente */
+}
+
+/* Estilos de imagen dentro del enlace en el header */
+header > a > img {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5)); /* Añade sombra a la imagen */
+    width: 8vw; /* Ajusta el ancho de la imagen */
+    float: left; /* La imagen flotará a la izquierda */
+}
+
+
+/*  nav (barra de navegación) dentro del header */
+header > nav {
+    float: left;
+    margin: 4vh 3vw ;
+    width: 79vw;
+}
+
+
+/* Estilos de los enlaces dentro del nav */
+header > nav > a {
+    margin: 0 1vw;
+    color: var(--color-secundario);
+    text-decoration: none;/*Quita la linea de los enlaces*/
+    padding: 1.5vh 0;
+}
+
+/* Efecto al pasar el ratón sobre los enlaces */
+header a:hover {
+    transform: scale(1.05);
+    transition: 0.06s;
+    color: var(--color-alternativo);
+}
+
+/* Media query para el header en pantallas pequeñas */
+ @media(max-width: 800px){
+    
+    header > nav > a{
+        display: block;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 1vh 0;
+        font-size: 1ch;
+    }
+
+    header > a > img{
+        align-items: center;
+        width: 20%;
+        float: none;
+        display: block;
+        margin: auto;
+    }
+    
+    header > nav{
+        width: 100%;
+        margin: 1vh auto;
+    }
+
+ }
+
+/* --------Main-------- */
+
+main {
+    position: relative;
+    min-height: 80vh; /* Establece una altura mínima para el contenido principal */
+ }
+ /* ------Boton de volver------ */
+ #volver{
+    height: 4vh;
+    width: 7vh;
+    background-color: #638ebd;
+     border-radius: 0.5vh;
+     border:0.3vh solid black;
+    cursor: pointer; /* Cambia el cursor a "puntero" */
+    float: left;  /*flota el voton de volver a la izquierda*/
+    margin: 0 2vh;
+    padding: 0.3vh 1.5vh;
+    transition: transform 0.3s;
+    position: absolute; /*permite posicionar el botón sin afectar a otros elementos*/ 
+}
+#volver:hover{
+    transform: scale(1.1);
+}
+#imgVolver{
+    width: 3vh; 
+    height: auto; 
+}
+/* --------Título(h1)---------- */
+
+h1{
+    text-align: center;
+    margin: 2vh 5vh;
+    font-size: 6vh;
+    font-weight: bold; /*Hace que el título esté en negrita*/
+    text-shadow:0.3vh 0.4vh 0.4vh #b0b0b0 ; /*Aplicamos una sombra al título*/
+} 
+
+/* ---------------Gestion de libros------------------------- */
+.btn-gestion{
+    text-align: center;
+    padding: 1vh 2vh; 
+     margin: 0.5vh ;
+     width: 19vw;
+    color: #fff;
+    background-color:#638ebd;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none; 
+    align-items: center;
+    top: 26%;
+    left: 33%;
+     display: block;
+    margin: 10px auto;
+}
+#cajagestion{
+    width: 28vw;
+    margin: 9vh auto; 
+    padding: 4vh 1vw; 
+    background-color: #e0e5ef; 
+    border-radius: 1vw; /*Se redondea los bordes del formualio*/
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1); 
+    display: flow-root; /*hace que los elementos hijos no se salgan de la caja*/
+}
+/* ------------- Alta_Libros ------------- */
+
+/* Contenedor del formulário*/
+#cajaForm {
+    width: 56vw;
+    margin: 2vh auto; 
+    padding: 4vh 1vw; 
+    background-color: #e0e5ef; 
+    border-radius: 1vw; /*Se redondea los bordes del formualio*/
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1); 
+    display: flow-root; /*hace que los elementos hijos no se salgan de la caja*/
+}
+
+/* Estilos para etiquetas y campos del formulario */
+label{
+    margin-left: 6%; /* Espaciado a la izquierda */
+}
+input, select{
+    margin: 2vh auto; /* Espaciado vertical */
+    display: block;
+    width: 90%; /* Ancho del campo */
+    padding: 1.5vh;
+    border: 0.1vw solid #ccc;
+    border-radius: 1.5vh; /* Bordes redondeados */
+    
+}
+#enviar{
+    width: 20vw; 
+    margin: 2vh auto; 
+    background-color: #7c8aae; /* Fondo del botón */
+    color: white; 
+    font-size: 3vh; 
+    border-radius: 1vw; 
+    box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+}
+
+/* ------------- modificar/eliminar -------------*/
+
+/*Contenedores de cada libro*/
+.list-item{
+    background-color: #e0e5ef;
+    border-radius: 1vw;
+    display: flow-root;
+    padding: 2vh 7vh;
+    margin: 0 8vh 1.5vh;
+}
+
+/*Botones y fecha a la derecha*/
+.boton-fecha{
+   
+    float: right;
+}
+/*Estilos de los botones de modificar y eliminar*/
+.btn-modificar, .btn-eliminar{
+    padding: 1vh 2vh;
+    margin: 0.5vh ;
+    font-size: 2vh;
+    color: #fff;
+    background-color:#638ebd;
+    border: none; /*Sin border*/
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+#formeliminar{
+    display:inline;
+}
+/*Estilos del título y la fecha*/
+.titulo,.fecha{
+padding: 4vh 0 2vh 5vh;
+font-size: 2vh;
+}
+@media(max-width: 800px){
+    .list-item{
+        position: relative;
+        height:20vh;
+        text-align: center;
+    }
+    .boton-fecha{
+        align-items: center;
+        position:absolute;
+        top: 26%;
+        left: 36%;
+        
+        display: block;
+        margin: 10px auto;
+    }
+    .fecha{
+        align-items: center;
+        position:absolute;
+        top: 8%;
+        right:16%;
+        display: block;
+        margin: 10px auto;
+    }
+
+}
+
+/* ------------- insertar_excel -------------*/
+
+/*Contenedor para insertar Excel*/
+#insertarExcel {
+    width: 50vh;
+    height: auto; /* Cambiado para ajustar la altura automáticamente */
+    border: 0.3vh dashed #000;
+    border-radius: 1vh;
+    align-items: center;
+    margin: 2vh auto;
+    padding: 4vh;
+    background-color: #e8ecf6;
+    display: flow-root;
+    position: relative;
+}
+
+/*Estilos de la imagen de insercción*/
+.img-labelexcel {
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+    display: flow-root;
+    align-items: center;
+}
+/*Aplicamos un hober para darle dinamismo a la img*/
+.img-labelexcel:hover {
+    transform: scale(1.1);
+}
+/*Estilo del input para que no salga la barra de inserccion*/
+#insertarExcel input[type="file"] {
+    display: none;
+}
+
+/* Estilo para poner los botones de importar y cancelar en el centro */
+#botones {
+    text-align: center;
+
+}
+/* Estilos de los botones importar y cancelar */
+#importarBtn, #cancelBtn {
+    padding: 0.9vh 0.8vh;
+    font-size: 2vh;
+    color: #fff;
+    background-color:#638ebd;
+    border: none;
+    border-radius: 0.9vh;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Aplicamos un hover para cuando pase el 
+puntero por los botones estos cambien
+ */
+#importarBtn:hover {
+    background-color: #e8f0ec;
+    border: 0.3vh solid #bfbccb;
+    transform: scale(1.1);
+    color:blue;
+    text-shadow:0.3vh 0.4vh 0.4vh #48549f; 
+}
+
+#cancelBtn:hover {
+    background-color: #e8f0ec;
+    border:0.3vh  solid #bfbccb;
+    transform: scale(1.1);
+    color: red;
+    text-shadow:0.3vh 0.4vh 0.4vh #ff91ad;
+}
+
+/* ------------- footer ------------- */
+footer {
+    background-color: var(--color-terciario);
+    padding: 3.4vh 1vw;
+    display: flow-root;
+}
+
+footer > p {
+    color: var(--color-secundario);
+    text-align: center;
+    float: left;
+    width: 50%;
+}
